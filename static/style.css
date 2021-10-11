@@ -5,10 +5,16 @@ body{
 }
 .cardimg{
     margin: 10px;
-    margin-left: 30px;
     padding: 10px;
     align-items: center;
 }
 .cardimg h5{
     text-align: center;
+}
+.card-img-top{
+    height: 300px;
+    object-fit: cover;
+}
+.main{
+    justify-content: space-between;
 }

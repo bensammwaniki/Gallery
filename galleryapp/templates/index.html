@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="row">
+<div class="row main">
   {% for img in images %}
-    <div class="card cardimg" style="width: 22rem;">
+    <div class="card cardimg" style="width: 26rem;">
         <img src="{{ img.image.url }}" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#exampleModal{{img.id}}">
         <div class="card-body">
           <h5 class="card-title">{{ img.name }}</h5>
@@ -11,26 +11,28 @@
           <span class="badge rounded-pill bg-dark" style="width: 100px;">{{ img.location }}</span>
         </div>
     </div>
+ {% endfor %}  
 
 </div>
 
-
+{% for img in images %}
   <!-- modal -->
   <div class="modal fade" id="exampleModal{{img.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
+            <h5 class="modal-title">{{ img.title }}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
 
-          <div class="card" style="width: 22rem;">
+          <div class="card" >
               <img src="{{ img.image.url }}" class="card-img-top" alt="">
               <div class="card-body">
                 <h5 class="card-title">{{ img.name }}</h5>
                 <span class="badge rounded-pill bg-warning text-dark" style="width: 100px;">{{ img.category }}</span>
                 <span class="badge rounded-pill bg-dark" style="width: 100px;">{{ img.location }}</span>
+                <span class="badge rounded-pill bg-success" style="width: 100px;">copy link </span>
               </div>
           </div>
 
