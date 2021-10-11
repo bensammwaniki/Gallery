@@ -15,3 +15,19 @@ def image(request, image_id):
     modtitle = image
     return render(request, 'index.html', {'image': modimage, 'title': modtitle})
 
+
+def search(request):
+    if 'category' in request.GET and request.GET["category"]:
+        # serch by lowercase
+        searched_term = request.GET.get("category").lower()
+        searched_images = Image.filter_by_category(searched_term)
+        message = f"{searched_term}"
+        locations = Location.objects.all()
+
+        return render(request, 'result.html', {"message": message, "images": searched_images, 'locations': locations})
+
+    else:
+        locations = Location.objects.all()
+        message = "Sorry we ave found '0' search result"
+        return render(request, 'result', {"message": message, 'locations': locations})    
+
