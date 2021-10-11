@@ -30,7 +30,7 @@
 
           <div class="card" >
             {% if img.image %}
-             <input type="hidden" value="{{ img.image.url }}" id="Link" class="form-control">
+             <input type="hidden" value="{{ img.image.url }}" id="Link">
               <img src="{{ img.image.url }}" class="card-img-top" alt="" onclick="share()">
               {% endif %} 
               <div class="card-body">
@@ -57,7 +57,7 @@
     function share() {
       var copyText = document.getElementById('Link')
       copyText.select();
-      document.execCommand('copy link ')
+      document.execCommand('copy')
     }
 </script>
   {% endblock %}
