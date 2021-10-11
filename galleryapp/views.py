@@ -7,4 +7,11 @@ def home(request):
     dispBylocation = Location.objects.all()
     dispBycategory = Category.objects.all()
 
+
     return render(request, "index.html", {'images': dispimages, 'locations': dispBylocation, 'categories': dispBycategory})
+
+def image(request, image_id):
+    modimage = Image.objects.get(id=image_id)
+    modtitle = image
+    return render(request, 'index.html', {'image': modimage, 'title': modtitle})
+
