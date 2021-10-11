@@ -12,7 +12,6 @@
         </div>
     </div>
 
-  {% endfor %}  
 </div>
 
 
@@ -26,7 +25,7 @@
           </div>
           <div class="modal-body">
 
-          <div class="card cardimg" style="width: 22rem;">
+          <div class="card" style="width: 22rem;">
               <img src="{{ img.image.url }}" class="card-img-top" alt="">
               <div class="card-body">
                 <h5 class="card-title">{{ img.name }}</h5>
@@ -39,6 +38,7 @@
         </div>
       </div>
     </div>
+    {% endfor %}  
 
   <!-- end modal  -->
 
