@@ -18,7 +18,7 @@ def image(request, image_id):
 
 def search(request):
     if 'search' in request.GET and request.GET["search"]:
-        # serch by lowercase
+        # search by lowercase
         searched_term = request.GET.get("search").lower()
         searched_images = Image.filter_by_category(searched_term)
         message = f"{searched_term}"

@@ -3,8 +3,9 @@
 {% block content %}
 
 <div class="tag">
-    <h1 class="h1" style="color: white;">{{ message }}</h1>
+    <h1 class="h1" style="color: white;">Search result of {{ message }}</h1>
 </div>
+
 <div class="row main">
   {% for img in images %}
     <div class="card cardimg" style="width: 26rem;">
@@ -33,13 +34,20 @@
 
           <div class="card" >
             {% if img.image %}
-              <img src="{{ img.image.url }}" class="card-img-top" alt="">
+             <input type="hidden" value="{{ img.image.url }}" id="Link" class="form-control">
+              <img src="{{ img.image.url }}" class="card-img-top" alt="" onclick="share()">
               {% endif %} 
               <div class="card-body">
                 <h5 class="card-title">{{ img.name }}</h5>
                 <span class="badge rounded-pill bg-warning text-dark" style="width: 100px;">{{ img.category }}</span>
                 <span class="badge rounded-pill bg-dark" style="width: 100px;">{{ img.location }}</span>
-                <span class="badge rounded-pill bg-success" style="width: 100px;">copy link</span>
+                <button class="badge rounded-pill bg-success" style="width: 100px;" onclick="share()">copy link</button>
+              </div>
+              <div>
+                <h6>{{ img.description }}</h6>
+              </div>
+              <div>
+                <button class="btn btn-warning" type="button" style="border-radius: 40px;">{{ img.name }}</button>
               </div>
           </div>
 
@@ -48,4 +56,12 @@
       </div>
     </div>
     {% endfor %}  
+  <!-- end modal  -->
+<script>
+    function share() {
+      var copyText = document.getElementById('Link')
+      copyText.select();
+      document.execCommand('copy link ')
+    }
+</script>
 {% endblock %}
