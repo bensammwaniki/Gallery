@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-xx8z#nn3t&b_e+(7940(c&#h*b6m(&$(ckl^84mdl+k+gr_g2a
 
 ALLOWED_HOSTS = ['galleriaben.herokuapp.com', '.127.0.0.1']
 
+DEBUG=False
 
 # Application definition
 
