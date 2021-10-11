@@ -29,5 +29,5 @@ def search(request):
     else:
         locations = Location.objects.all()
         message = "Sorry we ave found '0' search result"
-        return render(request, 'result', {"message": message, 'locations': locations})    
+        return render(request, 'result.html', {"message": message, 'locations': locations})    
 
