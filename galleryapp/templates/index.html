@@ -6,8 +6,9 @@
     <div class="card cardimg" style="width: 22rem;">
         <img src="{{ img.image.url }}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{  }}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">{{ img.name }}</h5>
+          <span class="badge rounded-pill bg-warning text-dark" style="width: 100px;">{{ img.category }}</span>
+          <span class="badge rounded-pill bg-dark" style="width: 100px;">{{ img.location }}</span>
         </div>
     </div>
 
