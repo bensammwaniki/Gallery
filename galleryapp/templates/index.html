@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
 <div class="row main">
   {% for img in images %}
     <div class="card cardimg" style="width: 26rem;">
+      {% if img.image %}
         <img src="{{ img.image.url }}" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#exampleModal{{img.id}}">
+      {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{ img.name }}</h5>
           <span class="badge rounded-pill bg-warning text-dark" style="width: 100px;">{{ img.category }}</span>
@@ -14,7 +17,6 @@
  {% endfor %}  
 
 </div>
-
 {% for img in images %}
   <!-- modal -->
   <div class="modal fade" id="exampleModal{{img.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -27,12 +29,14 @@
           <div class="modal-body">
 
           <div class="card" >
+            {% if img.image %}
               <img src="{{ img.image.url }}" class="card-img-top" alt="">
+              {% endif %} 
               <div class="card-body">
                 <h5 class="card-title">{{ img.name }}</h5>
                 <span class="badge rounded-pill bg-warning text-dark" style="width: 100px;">{{ img.category }}</span>
                 <span class="badge rounded-pill bg-dark" style="width: 100px;">{{ img.location }}</span>
-                <span class="badge rounded-pill bg-success" style="width: 100px;">copy link </span>
+                <span class="badge rounded-pill bg-success" style="width: 100px;">copy link</span>
               </div>
           </div>
 
@@ -41,7 +45,5 @@
       </div>
     </div>
     {% endfor %}  
-
   <!-- end modal  -->
-
   {% endblock %}

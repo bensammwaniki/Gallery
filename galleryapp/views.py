@@ -3,7 +3,7 @@ from .models import Image, Location, Category
 
 # Create your views here.
 def home(request):
-    dispimages = Image.objects.all().order_by('-id')
+    dispimages = Image.objects.all().order_by('id')
     dispBylocation = Location.objects.all()
     dispBycategory = Category.objects.all()
 

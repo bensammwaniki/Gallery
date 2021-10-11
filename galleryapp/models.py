@@ -1,5 +1,4 @@
 from django.db import models
-import datetime as dt
 
 class Location(models.Model):
     name = models.CharField(max_length=50, unique=True)
