@@ -73,7 +73,7 @@ The following languages have been used on this project:
 
 - Live link to view the project <a target="_blank" href="">View Galleria</a>
 
-## Some Screenshots
+## Screenshot
 
   <img src="./img/1.png" />
 
