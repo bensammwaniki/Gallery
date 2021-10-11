@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 <div class="row">
+  {% for img in dispimages %}
     <div class="card cardimg" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
@@ -10,6 +11,8 @@
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
+    
+  {% endfor %}  
 </div>
   <!-- modal -->
 
