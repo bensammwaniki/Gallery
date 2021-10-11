@@ -71,7 +71,7 @@ The following languages have been used on this project:
 
 ## Setup/Installation Requirements
 
-- Live link to view the project <a target="_blank" href="">View Galleria</a>
+- Live link to view the project <a target="_blank" href="https://galleriaben.herokuapp.com/">View Galleria</a>
 
 ## Screenshot
 
